@@ -13,7 +13,7 @@ import 'rxjs/Rx'; // Load all features
 
 @Component( { 
     selector:'pm-app',
-    templateUrl:'appView.html',
+    templateUrl:'./app/appView.html',
     directives:[ROUTER_DIRECTIVES],
     providers:[ProductService,
                 HTTP_PROVIDERS, 
@@ -21,8 +21,8 @@ import 'rxjs/Rx'; // Load all features
 })
 
 @RouteConfig ([
-    { path : '/welcome', name : 'Welcome', component : WelcomeComponent, useAsDefault : true}, 
-    { path : '/products', name : 'Products', component : ProductListComponent}
+    { name : 'WelcomePage', path : '/welcome',  component : WelcomeComponent, useAsDefault : true}, 
+    { name : 'ProductsPage', path : '/products', component : ProductListComponent}
 ]) 
 
 

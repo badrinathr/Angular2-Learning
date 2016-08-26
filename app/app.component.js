@@ -43,15 +43,15 @@ System.register(['angular2/core', './products/product-list.component', './produc
                     // Load all features
                     core_1.Component({
                         selector: 'pm-app',
-                        templateUrl: 'appView.html',
+                        templateUrl: './app/appView.html',
                         directives: [router_1.ROUTER_DIRECTIVES],
                         providers: [product_service_1.ProductService,
                             http_1.HTTP_PROVIDERS,
                             router_1.ROUTER_PROVIDERS]
                     }),
                     router_1.RouteConfig([
-                        { path: '/welcome', name: 'Welcome', component: welcome_component_1.WelcomeComponent, useAsDefault: true },
-                        { path: '/products', name: 'Products', component: product_list_component_1.ProductListComponent }
+                        { name: 'WelcomePage', path: '/welcome', component: welcome_component_1.WelcomeComponent, useAsDefault: true },
+                        { name: 'ProductsPage', path: '/products', component: product_list_component_1.ProductListComponent }
                     ]), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
