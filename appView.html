@@ -1,3 +1,14 @@
-<div><h1>{{pageTitle}}</h1>
-    <pm-products></pm-products>
+<div>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <a class="navbar-brand">{{pageTitle}}</a>
+            <ul class="nav navbar-bar">
+                <li><a [routerLink] = "['Welcome']">Home</a></li>
+                <li><a [routerLink] = "['Products']">Product List</a></li>
+            </ul>
+        </div>
+        <div class="container">
+                <router-outlet></router-outlet>
+        </div>
+    </nav>
 </div>

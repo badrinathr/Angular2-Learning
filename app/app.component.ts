@@ -5,18 +5,29 @@ import {Component} from 'angular2/core';
 import {ProductListComponent} from './products/product-list.component';
 import {ProductService} from './products/product.service';
 import {HTTP_PROVIDERS} from 'angular2/http';
+import {ROUTER_PROVIDERS, RouteConfig,ROUTER_DIRECTIVES, RouterOutlet} from 'angular2/router';
+import {WelcomeComponent} from './home/welcome.component';
+
 import 'rxjs/Rx'; // Load all features
 
 
 @Component( { 
     selector:'pm-app',
     templateUrl:'appView.html',
-    directives:[ProductListComponent],
+    directives:[ROUTER_DIRECTIVES],
     providers:[ProductService,
-                HTTP_PROVIDERS]
+                HTTP_PROVIDERS, 
+                ROUTER_PROVIDERS]
 })
 
+@RouteConfig ([
+    { path : '/welcome', name : 'Welcome', component : WelcomeComponent, useAsDefault : true}, 
+    { path : '/products', name : 'Products', component : ProductListComponent}
+]) 
+
+
+
 export class AppComponent { 
-    pageTitle : string = "ACME Production Management Welcomes You";
+    pageTitle : string = "ACME Product Management";
 
 }
